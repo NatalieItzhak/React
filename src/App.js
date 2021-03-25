@@ -6,6 +6,7 @@ import Homepage from './components/Homepage';
 import Products from './components/Products';
 import Header from './components/Header';
 import ProductDetail from './components/ProductDetail '
+import './style.css'
 
 
 

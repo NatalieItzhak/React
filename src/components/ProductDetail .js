@@ -1,22 +1,28 @@
 import React from 'react';
-import {Route, useParams, Link } from 'react-router-dom';
-import Storedata from '../store'
+import { Route, useLocation, Link } from 'react-router-dom';
 
 
-const ProductDetail = () => {
-    return(
+const ProductDetail = (props) => {
+  const location = useLocation();
+  const { title, price, imageUrl } = location.state;
+
+
+  function backToList() {
+    props.history.goBack()
+  }
+
+  return (
+    <div>
+      <h2>{title}</h2>
+      <div>Price: {price} $</div>
       <div>
-        <h2>{Storedata.itle}</h2>
-        <div>Price: {Storedata.price} $</div>
-        <div>
-          <img src={Storedata.imageUrl} alt={Storedata.title}/>
-        </div>
-          <button>Back<Link to='/Products'></Link></button>
+        <img src={imageUrl} alt={title} />
       </div>
-    );
+      <button  onClick={backToList}>Back</button>
+    </div>
+  );
 
-  
+
 }
-
 
 export default ProductDetail;

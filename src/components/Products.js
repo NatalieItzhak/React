@@ -15,8 +15,9 @@ class Products extends React.Component {
 
 
     productsList = () => {
+        const currentPath = this.props.location.pathname;
         return this.state.Products.map(product => {
-            return <Link to={{ product: `/Products/${product.id}`, state: product }} key={product.id}>{product.title}</Link>
+            return <Link className='productsTitle' to={{pathname: `${currentPath}/${product.id}`, state: product }} key={product.id}>{product.title}</Link>
         });
     }
 

@@ -1,8 +1,9 @@
 import React from 'react';
+import '../style.css'
 
 
 const Homepage = () => {
-    return <div> Homepage
+    return <div className='homepage'> Homepage
     </div>
   
   };
